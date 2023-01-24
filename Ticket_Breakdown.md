@@ -7,7 +7,8 @@ We are a staffing company whose primary purpose is to book Agents at Shifts post
 
 ## You've been asked to work on a ticket. It reads:
 
-**Currently, the id of each Agent on the reports we generate is their internal database id. We'd like to add the ability for Facilities to save their own custom ids for each Agent they work with and use that id when generating reports for them.**
+**Currently, the id of each Agent on the reports we generate is their internal database id. 
+We'd like to add the ability for Facilities to save their own custom ids for each Agent they work with and use that id when generating reports for them.**
 
 
 Based on the information given, break this ticket down into 2-5 individual tickets to perform. Provide as much detail for each ticket as you can, including acceptance criteria, time/effort estimates, and implementation details. Feel free to make informed guesses about any unknown details - you can't guess "wrong".
@@ -16,3 +17,20 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+### Assumptions
+- Architecture looks like this:
+```
+ +============+         +------------------+       +-------------------------+
+ || Database ||  <--->  | Staffing Service | <---> | Facility App (3d-party) |
+ +============+         +------------------+       +-------------------------+
+```
+Where our company owns `Database` and `Staffing Service`, which integrated with 3d-party Facility app.
+- TODO: we have automated tests, migrations
+- TOOD: mention notation I use
+- TODO: we already discussed this change with 3d-party and it won't break their system
+
+### Breakdown TODO
+- Main task ()
+- 1) Secondary task: update API contracts & automated / integration tests
+- 2) Secondary task: update database model in code we use + DB queries + unit tests + migrations
+- 3) Secondary task: update docs
