@@ -13,6 +13,7 @@ describe("deterministicPartitionKey", () => {
 
     const actualKey = deterministicPartitionKey(event);
     expect(actualKey).toBe(expectedKey);
+    expect(actualKey.length).toBeLessThanOrEqual(256);
   });
 
   it("Should return key as calculated hash of income event if the event does not contain a partition key", () => {
@@ -31,6 +32,7 @@ describe("deterministicPartitionKey", () => {
 
     const actualKey = deterministicPartitionKey(event);
     expect(actualKey).toBe(expectedKey);
+    expect(actualKey.length).toBeLessThanOrEqual(256);
   });
 
   it("Should return key as a hash of provided partition key in event if the length of provided key exceeds 256", () => {
